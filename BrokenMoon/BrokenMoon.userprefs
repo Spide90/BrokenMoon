@@ -1,14 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Quest\IncreaseOnPickup.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\AI.js">
     <Files>
-      <File FileName="Assets\Scripts\Items\Item.js" Line="41" Column="54" />
-      <File FileName="Assets\Scripts\Quest\Quest.js" Line="30" Column="2" />
-      <File FileName="Assets\Scripts\Quest\QuestGui.js" Line="22" Column="29" />
-      <File FileName="Assets\Scripts\Quest\TriggerStart.js" Line="3" Column="19" />
-      <File FileName="Assets\Scripts\Quest\IncreaseOnDestroy.js" Line="6" Column="31" />
+      <File FileName="Assets\Scripts\Items\Item.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Quest\Quest.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Quest\QuestGui.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Quest\TriggerStart.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Quest\IncreaseOnDestroy.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Items\Shatter.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Quest\IncreaseOnPickup.js" Line="8" Column="25" />
+      <File FileName="Assets\Scripts\Enemy\AI.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
