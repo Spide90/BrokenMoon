@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\Quest\QuestGui.js" />
      <Compile Include="Assets\Scripts\Quest\TriggerStart.js" />
      <Compile Include="Assets\Scripts\Radar\Radar.js" />
+     <Compile Include="Assets\StaticRotation.js" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
