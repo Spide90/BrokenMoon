@@ -15,31 +15,33 @@ function Start () {
 }
 
 function aiIdle() {
-	transform.velocity = Vector3.zero;
+	rigidbody.velocity = Vector3.zero;
 }
 
 function aiAware() {
-	var rotation = Quaternion.LookRotation();
+	var rotation = Quaternion.LookRotation(player.transform.position);
+	rotation.x = 0;
 	var randomTurn : float = Random.Range(-20, 20);
 	rotation.Euler(0, randomTurn, 0);
-	transfom.rotation = rotation;
-	transform.translate(Vector3.Forward * speed);
+	transform.rotation = rotation;
+	transform.Translate(Vector3.forward * speed);
 }
 
 function aiAttacking() {
-	var rotation = Quaternion.LookRotation();
+	var rotation = Quaternion.LookRotation(player.transform.position);
+	rotation.x = 0;
 	transform.rotation = rotation;
-	transform.translate(Vector3.Forward * speed);
+	transform.Translate(Vector3.forward * speed);
 	
 }
 
 function shoot() {
-	var cannon = gameObject.GetComponentInChildren(Cannon);
+	var cannon = gameObject.GetComponentInChildren(AIShoot);
 	cannon.shoot();
 }
 
 function Update () {
-	var distance = Vector3.magnitude(transform.position - player.transform.position);
+	var distance = (transform.position - player.transform.position).magnitude;
 	if (distance < signalRange) {
 		if (distance < attackRange) {
 			state = AIState.Attacking;

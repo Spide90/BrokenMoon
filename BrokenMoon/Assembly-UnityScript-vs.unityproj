@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraControl.js" />
      <Compile Include="Assets\Scripts\Enemy\AI.js" />
+     <Compile Include="Assets\Scripts\Enemy\AIShoot.js" />
      <Compile Include="Assets\Scripts\GUI\GUIIndoor.js" />
      <Compile Include="Assets\Scripts\GUI\GUIInventory.js" />
      <Compile Include="Assets\Scripts\GUI\GUIStartScreen.js" />
