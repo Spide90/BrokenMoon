@@ -2,16 +2,21 @@
 
 enum AIState {Idle, Aware, Attacking};
 
-var player : PlayerControl;
-var speed : float = 100;
-var turnRate : float = 5;
-var state : AIState;
-var signalRange : float = 50;
-var attackRange : float = 25;
-var shootIntervall : float = 1;
+var speed : float;
+var turnRate : float;
+var signalRange : float;
+var attackRange : float;
+var fireRate : float = 3;
+
+private var lastShoot : float;
+private var yAxis;
+private var state : AIState;
+private var player : PlayerControl;
 
 function Start () {
 	player = FindObjectOfType(PlayerControl);
+	Physics.IgnoreCollision(player.collider, this.collider);
+	yAxis = transform.position.y;
 }
 
 function aiIdle() {
@@ -19,25 +24,28 @@ function aiIdle() {
 }
 
 function aiAware() {
-	var rotation = Quaternion.LookRotation(player.transform.position);
-	rotation.x = 0;
+	transform.LookAt(Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+	
 	var randomTurn : float = Random.Range(-20, 20);
-	rotation.Euler(0, randomTurn, 0);
-	transform.rotation = rotation;
+
 	transform.Translate(Vector3.forward * speed);
 }
 
 function aiAttacking() {
-	var rotation = Quaternion.LookRotation(player.transform.position);
-	rotation.x = 0;
-	transform.rotation = rotation;
-	transform.Translate(Vector3.forward * speed);
-	
+	rigidbody.velocity = Vector3.zero;
+	rigidbody.angularVelocity = Vector3.zero;
+	transform.LookAt(Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+	if (Time.time > lastShoot) {
+		shoot();
+		lastShoot = Time.time + fireRate;
+		Debug.Log(lastShoot);
+	}
 }
 
 function shoot() {
 	var cannon = gameObject.GetComponentInChildren(AIShoot);
 	cannon.shoot();
+	Debug.Log("peng!");
 }
 
 function Update () {
@@ -62,4 +70,5 @@ function Update () {
 			aiAttacking();
 			break;
 	}
+	transform.position.y = yAxis;
 }
