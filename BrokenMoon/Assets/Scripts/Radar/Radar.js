@@ -14,9 +14,6 @@ var centerObject : Transform;
 var mapScale = 0.3;
 var mapSizePercent = 15;
 
-var checkAIscript : boolean = true;
-var enemyTag = "Enemy";
-
 enum radarLocationValues {topLeft, topCenter, topRight, middleLeft, middleCenter, middleRight, bottomLeft, bottomCenter, bottomRight, custom}
 var radarLocation : radarLocationValues = radarLocationValues.bottomLeft;
 
@@ -37,7 +34,7 @@ function OnGUI () {
  	bY=centerObject.transform.position.z * mapScale;	
  	GUI.DrawTexture(Rect(mapCenter.x - mapWidth/2,mapCenter.y-mapHeight/2,mapWidth,mapHeight),radarBG);
 	
-	//DrawBlipsForEnemies();
+	DrawBlipsForEnemies();
 	DrawBlipsForAstroids();
 }
   
@@ -71,25 +68,18 @@ function drawBlip(go,aTexture){
 }
  
 function DrawBlipsForEnemies(){
-	//You will need to replace isChasing with a variable from your AI script that is true when 				the enemy is chasing the player, or doing watever you want it to be doing when it is red on 			the radar.
-	
-	//You will need to replace "EnemyAINew with the name of your AI script
-	
     // Find all game objects tagged Enemy
     var gos : GameObject[];
-    gos = GameObject.FindGameObjectsWithTag("enemy"); 
+    gos = GameObject.FindGameObjectsWithTag("Enemy"); 
  
     var distance = Mathf.Infinity; 
     var position = transform.position; 
  
     // Iterate through them and call drawBlip function
     for (var go : GameObject in gos)  { 
-   		 	var blipChoice : Texture = blip;
-   		   	if(checkAIscript){
-    			//var aiScript : EnemyAI = go.GetComponent("EnemyAI");
-//    		if(aiScript.isChasing)
-  //  				blipChoice = blipChasing;
-    	}
+   		var blipChoice : Texture = blip;
+    	var aiScript : AI = go.GetComponent("AI");
+    	if(aiScript.isChasing()) blipChoice = blipChasing;
 		drawBlip(go,blipChoice);
     }
  
