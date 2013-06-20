@@ -1,7 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\PlayerControl.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Health.js">
     <Files>
+      <File FileName="Assets\Scripts\Player\Hud.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Items\Item.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Quest\Quest.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Quest\QuestGui.js" Line="1" Column="1" />
@@ -12,14 +13,15 @@
       <File FileName="Assets\Scripts\Enemy\AI.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Items\ItemInfo.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\PlayerSpawn.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\PlayerControl.js" Line="48" Column="36" />
+      <File FileName="Assets\Scripts\Player\PlayerControl.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\Shoot.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Health.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Health.js" Line="6" Column="26" />
       <File FileName="Assets\Scripts\Radar\Radar.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GUI\GUIInventory.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\BulletMove.js" Line="1" Column="1" />
       <File FileName="Assets\StaticRotation.js" Line="1" Column="1" />
-      <File FileName="Assets\FlickeringLight.js" Line="14" Column="36" />
+      <File FileName="Assets\FlickeringLight.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Radar\MyRadar.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

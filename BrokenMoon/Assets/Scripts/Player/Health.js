@@ -2,8 +2,8 @@
 
 var healthPercentage : float;
 
-var healthMaximum : int;
-var healthCurrent : int;
+var healthMaximum : float;
+var healthCurrent : float;
 
 function increaseHealth(value : int) {
 	if (healthCurrent + value > healthMaximum) {
@@ -15,7 +15,7 @@ function increaseHealth(value : int) {
 }
 
 function decreaseHealth(value : int) {
-	if (healthCurrent + value <= 0) {
+	if (healthCurrent - value <= 0) {
 		Destroy(gameObject, 0);
 	} else {
 		healthCurrent -= value;
