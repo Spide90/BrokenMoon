@@ -4,9 +4,9 @@ var speed : float = 50;
 //turn speed
 var turnRate : float = 5;
 
-var rocketParticleSystem : ParticleSystem;
-private var initialParticleSize : float;
-private var initialParticleSpeed: float;
+var rocketParticleSystems : ParticleSystem[];
+var emissionRate : float = 300;
+var baseEmissionRate : float = 5;
 
 var cursor : Texture2D;
 private var cursorSizeX: int = 16;
@@ -16,14 +16,12 @@ private var cursorSizeY: int = 16;
 function Start() {
 	DontDestroyOnLoad(transform.gameObject);
 	
-	initialParticleSize = rocketParticleSystem.startSize;
-	initialParticleSpeed = rocketParticleSystem.startSpeed;
 	Screen.showCursor = false;
 }
 
 function Update () {
 	//add force to player to move forward
-	rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * speed);
+	rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime);
 	if (PlayerPrefs.GetInt("GamePad") == 1) {
 		transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * turnRate);
 	} else {
@@ -45,9 +43,11 @@ function Update () {
 			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnRate * Time.deltaTime);
 		}
     }
-    // particleSystem
-    rocketParticleSystem.startSize = initialParticleSize * Mathf.Clamp01(Input.GetAxis("Vertical"));
-    rocketParticleSystem.startSpeed = initialParticleSpeed * Mathf.Clamp01(Input.GetAxis("Vertical"));
+    
+    // particleSystem Control
+    for (var ps : ParticleSystem in rocketParticleSystems) {
+    	ps.emissionRate = emissionRate * Input.GetAxis("Vertical") + baseEmissionRate;
+    }
 }
 
 function Awake() {
