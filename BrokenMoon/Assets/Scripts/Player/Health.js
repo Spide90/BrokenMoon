@@ -16,7 +16,7 @@ function increaseHealth(value : int) {
 
 function decreaseHealth(value : int) {
 	if (healthCurrent + value <= 0) {
-		Destroy(transform, 0);
+		Destroy(gameObject, 0);
 	} else {
 		healthCurrent -= value;
 	}

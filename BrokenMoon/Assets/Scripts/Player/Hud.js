@@ -6,7 +6,8 @@ var redBar : GUITexture;
 var greenBar : GUITexture;
 
 function Start() {
-	associatedHealth = FindObjectOfType(PlayerControl) as Health;
+	var player = FindObjectOfType(PlayerControl);
+	associatedHealth = player.GetComponent(Health);
 	var redBarColor : Color = redBar.color;
 	redBarColor.a = 0;
 	redBar.color = redBarColor;
@@ -17,7 +18,8 @@ function Start() {
 
 function OnGUI() {
 	if (!associatedHealth) {
-		associatedHealth = FindObjectOfType(PlayerControl) as Health;
+		var player = FindObjectOfType(PlayerControl);
+		associatedHealth = player.GetComponent(Health);
 	} else {
 		var healthPercentage = associatedHealth.healthPercentage;
 		var redBarColor : Color = redBar.color;

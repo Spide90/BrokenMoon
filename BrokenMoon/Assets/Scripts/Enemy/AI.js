@@ -15,7 +15,6 @@ private var player : PlayerControl;
 
 function Start () {
 	player = FindObjectOfType(PlayerControl);
-	Physics.IgnoreCollision(player.collider, this.collider);
 	yAxis = transform.position.y;
 }
 
@@ -28,7 +27,7 @@ function aiAware() {
 	
 	var randomTurn : float = Random.Range(-20, 20);
 
-	transform.Translate(Vector3.forward * speed);
+	rigidbody.AddRelativeForce(Vector3.forward * speed);
 }
 
 function aiAttacking() {
@@ -38,14 +37,12 @@ function aiAttacking() {
 	if (Time.time > lastShoot) {
 		shoot();
 		lastShoot = Time.time + fireRate;
-		Debug.Log(lastShoot);
 	}
 }
 
 function shoot() {
 	var cannon = gameObject.GetComponentInChildren(AIShoot);
 	cannon.shoot();
-	Debug.Log("peng!");
 }
 
 function Update () {
