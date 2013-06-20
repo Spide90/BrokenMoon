@@ -59,6 +59,6 @@ function OnGUI(){
 		GUI.DrawTexture(Rect(Event.current.mousePosition.x-cursorSizeX/2, Event.current.mousePosition.y-cursorSizeY/2, cursorSizeX, cursorSizeY), cursor);
 	}
 	if (PlayerPrefs.GetInt("GamePad") == 0) {
-		GUI.DrawTexture (Rect(Input.mousePosition.x-cursorSizeX/2 + cursorSizeX/2, (Screen.height-Input.mousePosition.y)-cursorSizeY/2 + cursorSizeY/2, cursorSizeX, cursorSizeY), cursor);
+		GUI.DrawTexture (Rect(Input.mousePosition.x-cursorSizeX/2 , (Screen.height-Input.mousePosition.y)-cursorSizeY/2, cursorSizeX, cursorSizeY), cursor);
 	}
 }

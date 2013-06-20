@@ -8,9 +8,9 @@ var signalRange : float;
 var attackRange : float;
 var fireRate : float = 3;
 
+private var state : AIState;
 private var lastShoot : float;
 private var yAxis;
-private var state : AIState;
 private var player : PlayerControl;
 
 function Start () {
@@ -43,6 +43,10 @@ function aiAttacking() {
 function shoot() {
 	var cannon = gameObject.GetComponentInChildren(AIShoot);
 	cannon.shoot();
+}
+
+function isChasing() : boolean {
+	return state != AIState.Idle;
 }
 
 function Update () {
