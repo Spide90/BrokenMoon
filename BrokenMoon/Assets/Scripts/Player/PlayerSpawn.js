@@ -9,8 +9,8 @@ function Start () {
 	playerControl = player.GetComponent(PlayerControl); 
   	playerControl.enabled = true;
   	
-  	var radar : Radar;
-  	radar = player.GetComponent(Radar); 
+  	var radar : MyRadar;
+  	radar = player.GetComponent(MyRadar); 
   	radar.enabled = true;
   	
   	var guiInventory : GUIInventory;
