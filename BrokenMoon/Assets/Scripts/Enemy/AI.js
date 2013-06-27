@@ -12,6 +12,7 @@ private var state : AIState;
 private var lastShoot : float;
 private var yAxis;
 private var player : PlayerControl;
+var targetLock : Texture2D;
 
 function Start () {
 	player = FindObjectOfType(PlayerControl);
@@ -72,4 +73,15 @@ function Update () {
 			break;
 	}
 	transform.position.y = yAxis;
+}
+
+function OnMouseEnter() {
+	//var screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+	//if(Event.current.type.Equals(EventType.Repaint))
+		//Graphics.DrawTexture(Rect(screenPoint.x - 8, screenPoint.y - 8, 16, 16), targetLock);
+	player.transform.GetComponent(Shoot).setTarget(this.transform);
+}
+
+function OnMouseExit() {
+	player.transform.GetComponent(Shoot).setTarget(null);
 }

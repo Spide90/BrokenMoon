@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Items\ItemInfo.js" />
      <Compile Include="Assets\Scripts\Items\Shatter.js" />
      <Compile Include="Assets\Scripts\Player\BulletMove.js" />
+     <Compile Include="Assets\Scripts\Player\Cannon.js" />
      <Compile Include="Assets\Scripts\Player\Damage.js" />
      <Compile Include="Assets\Scripts\Player\EnterScene.js" />
      <Compile Include="Assets\Scripts\Player\Health.js" />
@@ -65,6 +66,8 @@
      <Compile Include="Assets\Scripts\Player\PlayerControl.js" />
      <Compile Include="Assets\Scripts\Player\PlayerSpawn.js" />
      <Compile Include="Assets\Scripts\Player\PlayerSpawnIndoor.js" />
+     <Compile Include="Assets\Scripts\Player\Rocket.js" />
+     <Compile Include="Assets\Scripts\Player\RocketMove.js" />
      <Compile Include="Assets\Scripts\Player\Shoot.js" />
      <Compile Include="Assets\Scripts\Quest\IncreaseOnDestroy.js" />
      <Compile Include="Assets\Scripts\Quest\IncreaseOnPickup.js" />
