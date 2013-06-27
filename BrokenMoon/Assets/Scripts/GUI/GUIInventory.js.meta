@@ -2,7 +2,9 @@ fileFormatVersion: 2
 guid: 70dc896db8765594f94e92b998d0053a
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - inventoryTexture: {fileID: 2800000, guid: fe963e90c43b04cd1b83ec5cb58b6178, type: 3}
+  - associatedInventory: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
