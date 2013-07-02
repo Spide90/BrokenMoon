@@ -27,7 +27,7 @@ function OnGUI() {
 		} else {
 			PlayerPrefs.SetInt("GamePad", 0);
 		}
-		Application.LoadLevel(leadsTo);
+		Application.LoadLevel(1);
 	}
 	gamePad = GUI.Toggle(Rect(Screen.width/2, Screen.height/4, Screen.width/10, Screen.height/15), gamePad, "GamePad");
 }

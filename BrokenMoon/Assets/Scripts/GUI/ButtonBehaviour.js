@@ -25,6 +25,7 @@ function Update() {
 	}
 	if (pressed) {
 		renderer.material.color = pressColor;
+		Application.LoadLevel(1);
 	} else {
 		renderer.material.color = color;
 	}
