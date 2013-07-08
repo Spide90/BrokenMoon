@@ -24,5 +24,5 @@ function decreaseHealth(value : int) {
 }
 
 function updatePercentHealth() {
-	healthPercentage = healthCurrent/healthMaximum;
+	healthPercentage = 1f*healthCurrent/healthMaximum;
 }

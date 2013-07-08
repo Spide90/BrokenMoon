@@ -3,7 +3,7 @@
 var damage : int;
 var particles : Transform;
 
-function OnTriggerEnter(col : Collider) {
+function OnCollisionEnter(col : Collision) {
 	var health : Health;
 	var emitterInstance = Instantiate(particles, transform.position, Quaternion.Inverse(transform.rotation));
 	Destroy(emitterInstance.gameObject, emitterInstance.particleSystem.duration);

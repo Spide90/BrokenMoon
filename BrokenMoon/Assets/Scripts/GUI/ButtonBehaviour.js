@@ -26,7 +26,7 @@ function Update() {
 	if (pressed) {
 		renderer.material.color = pressColor;
 		Debug.Log("asdf");
-		Application.LoadLevel("AnotherTestScene");
+		Application.LoadLevel("DemoScene");
 	} else {
 		renderer.material.color = color;
 	}
