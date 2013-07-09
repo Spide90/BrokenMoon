@@ -15,8 +15,9 @@ function startQuest(quest : Quest) {
 }
 
 function  finishQuest() {
-	quest = null;
+Debug.Log("finished");
 	activeQuest = false;
+	quest = null;
 }
 
 function getQuest() : Quest {

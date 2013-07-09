@@ -32,8 +32,6 @@ function aiAware() {
 }
 
 function aiAttacking() {
-	rigidbody.velocity = Vector3.zero;
-	rigidbody.angularVelocity = Vector3.zero;
 	transform.LookAt(Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
 	if (Time.time > lastShoot) {
 		shoot();

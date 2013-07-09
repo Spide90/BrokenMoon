@@ -3,12 +3,14 @@
 var quest : Quest;
 
 function increaseCounter() {
-	if (!quest) {
-		var gui = FindObjectOfType(QuestGui);
-		quest = gui.getQuest();
-	}
-	if (quest) {
-		quest.increaseQuestCounter();
+	if (!(quest.counter >= quest.max)) {
+		if (!quest) {
+			var gui = FindObjectOfType(QuestGui);
+			quest = gui.getQuest();
+		}
+		if (quest) {
+			quest.increaseQuestCounter();
+		}
 	}
 }
 

@@ -20,6 +20,7 @@ function OnGUI() {
 	if (!associatedHealth) {
 		var player = FindObjectOfType(PlayerControl);
 		associatedHealth = player.GetComponent(Health);
+		Debug.Log(associatedHealth);
 	} else {
 		var healthPercentage = associatedHealth.healthPercentage;
 		var redBarColor : Color = redBar.color;
