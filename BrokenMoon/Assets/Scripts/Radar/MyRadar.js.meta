@@ -6,6 +6,7 @@ MonoImporter:
   - astroidTexture: {fileID: 2800000, guid: 179ab7ab1cd2c614fbf06413baf9271f, type: 3}
   - enemyTextureIdle: {fileID: 2800000, guid: bace24af31c25264d993d82b1c2466b5, type: 3}
   - enemyTextureChase: {fileID: 2800000, guid: bb1a00a6cb7fc504091ab66cbd368ab4, type: 3}
+  - waypointTexture: {fileID: 2800000, guid: a5d03daadf773da4a8dc2c2652511f0b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

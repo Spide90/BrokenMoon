@@ -72,11 +72,11 @@
      <Compile Include="Assets\Scripts\Player\Rocket.js" />
      <Compile Include="Assets\Scripts\Player\RocketMove.js" />
      <Compile Include="Assets\Scripts\Player\Shoot.js" />
-     <Compile Include="Assets\Scripts\Quest\IncreaseOnDestroy.js" />
      <Compile Include="Assets\Scripts\Quest\IncreaseOnPickup.js" />
      <Compile Include="Assets\Scripts\Quest\Quest.js" />
      <Compile Include="Assets\Scripts\Quest\QuestGui.js" />
      <Compile Include="Assets\Scripts\Quest\TriggerStart.js" />
+     <Compile Include="Assets\Scripts\Quest\Waypoint.js" />
      <Compile Include="Assets\Scripts\Radar\MyRadar.js" />
      <Compile Include="Assets\Scripts\Radar\Radar.js" />
      <Compile Include="Assets\Scripts\TextureOffset.js" />

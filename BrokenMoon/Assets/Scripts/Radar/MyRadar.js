@@ -3,6 +3,7 @@
 var astroidTexture : Texture2D;
 var enemyTextureIdle : Texture2D;
 var enemyTextureChase : Texture2D; 
+var waypointTexture : Texture2D;
 
 private var textureSizeX : float = 16;
 private var textureSizeY : float = 16;
@@ -16,6 +17,7 @@ function Start () {
 function OnGUI() {
 	drawEnemies();
 	drawAstroids();
+	drawWaypoints();
 }
 
 function drawEnemies() {
@@ -57,4 +59,20 @@ function drawAstroids() {
 		var guiPoint = Camera.main.ScreenToViewportPoint(Vector2(screenPoint.x, screenPoint.y));
 		GUI.DrawTexture(Rect((guiPoint.x * Screen.width) - textureSizeX/2, Screen.height - (guiPoint.y * Screen.height) - textureSizeY/2, textureSizeX, textureSizeY), astroidTexture, ScaleMode.ScaleToFit);
 	}
+}
+
+function drawWaypoints() {
+	var waypoints : GameObject[] = GameObject.FindGameObjectsWithTag("Waypoint");
+	for (var waypoint : GameObject in waypoints) {
+		var direction = (waypoint.transform.position - transform.position).normalized;
+		var angle = Vector3.Angle(transform.forward, direction);
+		if (Vector3.Cross(transform.forward, direction).y < 0) {
+			angle -= 360;
+		}
+		direction = Vector3(1.15 * radarSphereDistance * direction.x, direction.y, 0.66 * radarSphereDistance * direction.z);
+		var worldPoint = direction + transform.position;
+		var screenPoint = Camera.main.WorldToScreenPoint(worldPoint);
+		var guiPoint = Camera.main.ScreenToViewportPoint(Vector2(screenPoint.x, screenPoint.y));
+		GUI.DrawTexture(Rect((guiPoint.x * Screen.width) - textureSizeX/2, Screen.height - (guiPoint.y * Screen.height) - textureSizeY/2, textureSizeX, textureSizeY), waypointTexture, ScaleMode.ScaleToFit);
+	}	
 }
