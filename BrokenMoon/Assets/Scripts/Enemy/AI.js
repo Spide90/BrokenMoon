@@ -26,7 +26,10 @@ function aiIdle() {
 }
 
 function aiAware() {
-	transform.LookAt(Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+	//transform.LookAt(Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+	var targetRotation = Quaternion.LookRotation(Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) - transform.position);
+ 
+	transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnRate * Time.deltaTime);
 	
 	var randomTurn : float = Random.Range(-20, 20);
 

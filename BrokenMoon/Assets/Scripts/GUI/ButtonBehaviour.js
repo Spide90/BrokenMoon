@@ -22,6 +22,14 @@ function Start () {
 }
 
 function Update() {
+	if (Input.GetAxis("Start")) {
+		if (!alreadyPressed) {
+		alreadyPressed = true;
+		lightChanger.changeColor();
+		mainCam.animation.Play();
+		buttonState = ButtonState.None;
+	}
+	}
 	switch (buttonState) {
 	case ButtonState.None:
 		scaleFactor = Mathf.Clamp(scaleFactor - touchIncrement, 1, touchFactor);
@@ -62,5 +70,6 @@ function OnMouseUpAsButton() {
 }
 
 function ChangeLevel() {
+	PlayerPrefs.SetInt("GamePad", 1);
 	Application.LoadLevel(newLevel);
 }

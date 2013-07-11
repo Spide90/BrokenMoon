@@ -44,8 +44,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CamAnimController.js" />
+     <Compile Include="Assets\ChangeLightColor.js" />
      <Compile Include="Assets\CyclicObjectMover.js" />
+     <Compile Include="Assets\FadeMatColor.js" />
      <Compile Include="Assets\FlickeringLight.js" />
+     <Compile Include="Assets\LightBlinker.js" />
+     <Compile Include="Assets\OffsetToObject.js" />
      <Compile Include="Assets\Scenes\Intro\GoToStartScene.js" />
      <Compile Include="Assets\Scripts\CameraControl.js" />
      <Compile Include="Assets\Scripts\Enemy\AI.js" />
