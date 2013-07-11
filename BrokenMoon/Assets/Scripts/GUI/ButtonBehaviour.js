@@ -16,6 +16,9 @@ function Start () {
 }
 
 function Update() {
+	if (Input.GetAxis("Start")) {
+		Application.LoadLevel("DemoScene");
+	}
 	if (touched) {
 		scaleFactor += touchIncrement;
 		if (scaleFactor > touchFactor) scaleFactor = touchFactor;
@@ -25,7 +28,7 @@ function Update() {
 	}
 	if (pressed) {
 		renderer.material.color = pressColor;
-		Debug.Log("asdf");
+		PlayerPrefs.SetInt("GamePad", 1);
 		Application.LoadLevel("DemoScene");
 	} else {
 		renderer.material.color = color;

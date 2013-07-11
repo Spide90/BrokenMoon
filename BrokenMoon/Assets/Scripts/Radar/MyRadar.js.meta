@@ -3,10 +3,10 @@ guid: b462cdf6c280c82489d0e37a315d57bd
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - astroidTexture: {fileID: 2800000, guid: 179ab7ab1cd2c614fbf06413baf9271f, type: 3}
-  - enemyTextureIdle: {fileID: 2800000, guid: bace24af31c25264d993d82b1c2466b5, type: 3}
-  - enemyTextureChase: {fileID: 2800000, guid: bb1a00a6cb7fc504091ab66cbd368ab4, type: 3}
-  - waypointTexture: {fileID: 2800000, guid: a5d03daadf773da4a8dc2c2652511f0b, type: 3}
+  - astroidTexture: {fileID: 2800000, guid: 4ee4f1b90a235b2419d88b4bbf3aea64, type: 3}
+  - enemyTextureIdle: {fileID: 2800000, guid: cd4a1d85231b2364395b506c85f60e1f, type: 3}
+  - enemyTextureChase: {fileID: 2800000, guid: ae24381a23e26f54c9cf8e9370915372, type: 3}
+  - waypointTexture: {fileID: 2800000, guid: c1cf26154803d6e44b6a3f25e8720237, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

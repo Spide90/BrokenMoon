@@ -13,8 +13,10 @@ private var lastShoot : float;
 private var yAxis;
 private var player : PlayerControl;
 var targetLock : Texture2D;
+private var cameraControl : CameraControl;
 
 function Start () {
+	cameraControl = Camera.main.GetComponent(CameraControl);
 	player = FindObjectOfType(PlayerControl);
 	yAxis = transform.position.y;
 }
@@ -54,9 +56,15 @@ function Update () {
 		if (distance < attackRange) {
 			state = AIState.Attacking;
 		} else {
+			if (state == AIState.Idle) {
+				cameraControl.addEnemy(gameObject);
+			}
 			state = AIState.Aware;
 		}
 	} else {
+		if (state == AIState.Aware) {
+			cameraControl.deleteEnemy(gameObject);
+		}
 		state = AIState.Idle;
 	}
 	switch (state) {
@@ -82,4 +90,8 @@ function OnMouseEnter() {
 
 function OnMouseExit() {
 	player.transform.GetComponent(Shoot).setTarget(null);
+}
+
+function OnDestroy() {
+	cameraControl.deleteEnemy(gameObject);
 }

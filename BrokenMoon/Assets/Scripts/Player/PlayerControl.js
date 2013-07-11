@@ -12,8 +12,15 @@ var cursor : Texture2D;
 private var cursorSizeX: int = 16;
 private var cursorSizeY: int = 16;
  
+private var audioFly : AudioSource;
+private var audioIdle : AudioSource;
 
 function Start() {
+
+	var sources = GetComponents(AudioSource);
+	audioFly = sources[0];
+	audioIdle = sources[1];
+	
 	DontDestroyOnLoad(transform.gameObject);
 	
 	Screen.showCursor = false;
@@ -24,6 +31,17 @@ function Update () {
 	rigidbody.AddRelativeForce(Vector3.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime);
 	if (PlayerPrefs.GetInt("GamePad") == 1) {
 		transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * turnRate);
+		if (Input.GetAxis("Vertical") != 0) {
+			audioIdle.Stop();
+			if (!audioFly.isPlaying) {
+				audioFly.Play();
+			}
+		} else {
+			audioFly.Stop();
+			if (!audioIdle.isPlaying) {
+				audioIdle.Play();
+			}
+		}
 	} else {
 		//mousefollow
 		//create an invisible plane on the x,z axis with y = player height

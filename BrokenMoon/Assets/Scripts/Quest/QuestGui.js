@@ -15,7 +15,6 @@ function startQuest(quest : Quest) {
 }
 
 function  finishQuest() {
-Debug.Log("finished");
 	activeQuest = false;
 	quest = null;
 }

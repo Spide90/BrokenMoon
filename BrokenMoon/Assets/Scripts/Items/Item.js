@@ -20,6 +20,15 @@ function OnMouseOver() {
 	}
 }
 
+function Update() {
+	if (Input.GetAxis("Fire3") && !transform.parent) {
+		var distance = (transform.position - inventory.transform.position).magnitude;
+		if (distance < 30) {
+			pickUp();
+		}
+	}
+}
+
 function pickUp() {
 	inventory.addItem(this.transform);
 	//hide picked up item
