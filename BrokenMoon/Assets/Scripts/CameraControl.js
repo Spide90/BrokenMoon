@@ -40,11 +40,11 @@ function adjustCamera() {
 	if (!allVisible) {
 		distanceBehind += zoomSpeed * Time.deltaTime;
 		distanceAbove += zoomSpeed * Time.deltaTime;
-		radar.radarSphereDistance += zoomSpeed * Time.deltaTime;
+		radar.radarSphereDistance += 0.35 * Time.deltaTime;
 	} else {
 		distanceBehind -= zoomSpeed * Time.deltaTime;
 		distanceAbove -= zoomSpeed * Time.deltaTime;
-		radar.radarSphereDistance += zoomSpeed * Time.deltaTime;
+		radar.radarSphereDistance -= 0.35 * Time.deltaTime;
 	}
 	if (distanceBehind <= standartDistanceBehind) {
 		distanceBehind = standartDistanceBehind;

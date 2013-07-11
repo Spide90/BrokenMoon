@@ -8,8 +8,8 @@ var waypointTexture : Texture2D;
 private var textureSizeX : float = 16;
 private var textureSizeY : float = 16;
 
-var radarSphereDistance : float = 0;
-var standartDistance : float = 0;
+var radarSphereDistance : float = 1;
+var standartDistance : float = 1;
 
 var scanRange : float = 250;
 
@@ -34,7 +34,7 @@ function drawEnemies() {
 		if (Vector3.Cross(Vector3.forward, direction).y < 0) {
 			angle += 180;
 		}
-		direction = Vector3(10.4 * direction.x, direction.y,5 * direction.z);
+		direction = Vector3(10.4 * direction.x * radarSphereDistance, direction.y,5 * direction.z * radarSphereDistance);
 		var worldPoint = direction + transform.position;
 		//project this 3d point in cameras 2d screen
 		var screenPoint = Camera.main.WorldToScreenPoint(worldPoint);
@@ -57,7 +57,7 @@ function drawAstroids() {
 		if (Vector3.Cross(transform.forward, direction).y < 0) {
 			angle -= 360;
 		}
-		direction = Vector3(10.4 * direction.x, direction.y,5 * direction.z);
+		direction = Vector3(10.4 * direction.x * radarSphereDistance, direction.y,5 * direction.z * radarSphereDistance);
 		var worldPoint = direction + transform.position;
 		var screenPoint = Camera.main.WorldToScreenPoint(worldPoint);
 		var guiPoint = Camera.main.ScreenToViewportPoint(Vector2(screenPoint.x, screenPoint.y));
@@ -74,7 +74,7 @@ function drawWaypoints() {
 		if (Vector3.Cross(transform.forward, direction).y < 0) {
 			angle -= 360;
 		}
-		direction = Vector3(10.4 * direction.x, direction.y, 5 * direction.z);
+		direction = Vector3(10.4 * direction.x * radarSphereDistance, direction.y, 5 * direction.z * radarSphereDistance);
 		var worldPoint = direction + transform.position;
 		var screenPoint = Camera.main.WorldToScreenPoint(worldPoint);
 		var guiPoint = Camera.main.ScreenToViewportPoint(Vector2(screenPoint.x, screenPoint.y));
