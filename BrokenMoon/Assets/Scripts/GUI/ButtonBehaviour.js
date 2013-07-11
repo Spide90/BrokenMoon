@@ -3,53 +3,64 @@
 var debugText : String = "Hello world";
 
 private var initialScale : Vector3;
-private var touched : boolean = false;
-private var pressed : boolean = false;
 private var scaleFactor : float = 1;
 var touchIncrement : float = 0.02;
 var touchFactor : float = 1.1;
 var color : Color;
 var pressColor : Color;
+enum ButtonState {None, Hover, Pressed};
+var buttonState : ButtonState = ButtonState.None;
+private var alreadyPressed = false;
+var mainCam : GameObject;
+var newLevel : String;
+
+
+var lightChanger : ChangeLightColor;
 
 function Start () {
 	initialScale = transform.localScale;
 }
 
 function Update() {
-	if (Input.GetAxis("Start")) {
-		Application.LoadLevel("DemoScene");
+	switch (buttonState) {
+	case ButtonState.None:
+		scaleFactor = Mathf.Clamp(scaleFactor - touchIncrement, 1, touchFactor);
+		break;
+	case ButtonState.Hover:
+		scaleFactor = Mathf.Clamp(scaleFactor + touchIncrement, 1, touchFactor);
+		break;
 	}
-	if (touched) {
-		scaleFactor += touchIncrement;
-		if (scaleFactor > touchFactor) scaleFactor = touchFactor;
+	if (buttonState == ButtonState.Pressed) {
+		renderer.material.color = Color.Lerp(renderer.material.color, pressColor, 0.2);
 	} else {
-		scaleFactor -= touchIncrement;
-		if (scaleFactor < 1) scaleFactor = 1;
-	}
-	if (pressed) {
-		renderer.material.color = pressColor;
-		PlayerPrefs.SetInt("GamePad", 1);
-		Application.LoadLevel("DemoScene");
-	} else {
-		renderer.material.color = color;
+		renderer.material.color = Color.Lerp(renderer.material.color, color, 0.2);
 	}
 	transform.localScale = initialScale * scaleFactor;
 }
 
 function OnMouseEnter() {
-	touched = true;
+	buttonState = ButtonState.Hover;
 }
 
 function OnMouseExit() {
-	touched = false;
-	pressed = false;
+	if (buttonState != ButtonState.Pressed) {
+		buttonState = ButtonState.None;
+	}
 }
 
 function OnMouseDown() {
-	pressed = true;
+	buttonState = ButtonState.Pressed;
 }
 
 function OnMouseUpAsButton() {
-	Debug.Log("ACTION");
-	pressed = false;
+	if (!alreadyPressed) {
+		alreadyPressed = true;
+		lightChanger.changeColor();
+		mainCam.animation.Play();
+		buttonState = ButtonState.None;
+	}
+}
+
+function ChangeLevel() {
+	Application.LoadLevel(newLevel);
 }

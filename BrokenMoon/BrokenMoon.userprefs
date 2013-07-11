@@ -1,13 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Health.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CamAnimController.js">
     <Files>
       <File FileName="Assets\Scripts\Player\Hud.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Items\Item.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Quest\Quest.js" Line="30" Column="12" />
+      <File FileName="Assets\Scripts\Quest\Quest.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Quest\QuestGui.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Quest\TriggerStart.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Quest\IncreaseOnDestroy.js" Line="5" Column="24" />
       <File FileName="Assets\Scripts\Items\Shatter.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Quest\IncreaseOnPickup.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy\AI.js" Line="1" Column="1" />
@@ -15,17 +14,22 @@
       <File FileName="Assets\Scripts\Player\PlayerSpawn.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\PlayerControl.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\Shoot.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Health.js" Line="27" Column="24" />
+      <File FileName="Assets\Scripts\Player\Health.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Radar\Radar.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GUI\GUIInventory.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\BulletMove.js" Line="1" Column="1" />
       <File FileName="Assets\StaticRotation.js" Line="1" Column="1" />
       <File FileName="Assets\FlickeringLight.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Radar\MyRadar.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Damage.js" Line="3" Column="18" />
+      <File FileName="Assets\Scripts\Player\Damage.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GUI\GUIStartScreen.js" Line="1" Column="1" />
       <File FileName="Assets\CyclicObjectMover.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUI\ButtonBehaviour.js" Line="28" Column="17" />
+      <File FileName="Assets\Scripts\GUI\ButtonBehaviour.js" Line="66" Column="2" />
+      <File FileName="Assets\LightBlinker.js" Line="16" Column="78" />
+      <File FileName="Assets\ChangeLightColor.js" Line="3" Column="31" />
+      <File FileName="Assets\OffsetToObject.js" Line="3" Column="30" />
+      <File FileName="Assets\FadeMatColor.js" Line="17" Column="24" />
+      <File FileName="Assets\CamAnimController.js" Line="4" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,7 +1,7 @@
 #pragma strict
 
 function Start () {
-	rigidbody.AddRelativeForce(Vector3.forward * 50);
+	rigidbody.AddRelativeForce(Vector3.forward * 150);
 }
 
 function Update () {

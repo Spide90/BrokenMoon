@@ -29,6 +29,21 @@ ModelImporter:
     100046: Railing6
     100048: Railing7
     100050: Shield
+    100052: Lamp
+    100054: Lamp_001
+    100056: Lamp_002
+    100058: Lamp_003
+    100060: Lamp_004
+    100062: Lamp_005
+    100064: Lamp_006
+    100066: Lamp_007
+    100068: Lamp_008
+    100070: Lamp_009
+    100072: Lamp_010
+    100074: Lamp_011
+    100076: Lamp_012
+    100078: Lamp_013
+    100080: Outdoorramp
     400000: ControlCenterWindows
     400002: Cube
     400004: Cube_001
@@ -55,6 +70,21 @@ ModelImporter:
     400046: Railing6
     400048: Railing7
     400050: Shield
+    400052: Lamp
+    400054: Lamp_001
+    400056: Lamp_002
+    400058: Lamp_003
+    400060: Lamp_004
+    400062: Lamp_005
+    400064: Lamp_006
+    400066: Lamp_007
+    400068: Lamp_008
+    400070: Lamp_009
+    400072: Lamp_010
+    400074: Lamp_011
+    400076: Lamp_012
+    400078: Lamp_013
+    400080: Outdoorramp
     2300000: ControlCenterWindows
     2300002: Cube
     2300004: Cube_001
@@ -73,6 +103,21 @@ ModelImporter:
     2300030: Railing6
     2300032: Railing7
     2300034: Shield
+    2300036: Lamp
+    2300038: Lamp_001
+    2300040: Lamp_002
+    2300042: Lamp_003
+    2300044: Lamp_004
+    2300046: Lamp_005
+    2300048: Lamp_006
+    2300050: Lamp_007
+    2300052: Lamp_008
+    2300054: Lamp_009
+    2300056: Lamp_010
+    2300058: Lamp_011
+    2300060: Lamp_012
+    2300062: Lamp_013
+    2300064: Outdoorramp
     3300000: ControlCenterWindows
     3300002: Cube
     3300004: Cube_001
@@ -91,6 +136,21 @@ ModelImporter:
     3300030: Railing6
     3300032: Railing7
     3300034: Shield
+    3300036: Lamp
+    3300038: Lamp_001
+    3300040: Lamp_002
+    3300042: Lamp_003
+    3300044: Lamp_004
+    3300046: Lamp_005
+    3300048: Lamp_006
+    3300050: Lamp_007
+    3300052: Lamp_008
+    3300054: Lamp_009
+    3300056: Lamp_010
+    3300058: Lamp_011
+    3300060: Lamp_012
+    3300062: Lamp_013
+    3300064: Outdoorramp
     4300000: Cube_001
     4300002: Cube
     4300004: ControlCenterWindows
@@ -109,6 +169,21 @@ ModelImporter:
     4300030: Railing2
     4300032: Railing1
     4300034: IndoorStartBase
+    4300036: Lamp_013
+    4300038: Lamp_012
+    4300040: Lamp_011
+    4300042: Lamp_010
+    4300044: Lamp_009
+    4300046: Lamp_008
+    4300048: Lamp_007
+    4300050: Lamp_006
+    4300052: Lamp_005
+    4300054: Lamp_004
+    4300056: Lamp_003
+    4300058: Lamp_002
+    4300060: Lamp_001
+    4300062: Lamp
+    4300064: Outdoorramp
     7400000: Default Take
     9500000: //RootNode
   materials:

@@ -5,8 +5,10 @@ var speed : float = 50;
 var turnRate : float = 5;
 
 var rocketParticleSystems : ParticleSystem[];
+var rocketLights : Light[];
 var emissionRate : float = 300;
 var baseEmissionRate : float = 5;
+var lightIntensity : float = 1;
 
 var cursor : Texture2D;
 private var cursorSizeX: int = 16;
@@ -65,6 +67,14 @@ function Update () {
     // particleSystem Control
     for (var ps : ParticleSystem in rocketParticleSystems) {
     	ps.emissionRate = emissionRate * Input.GetAxis("Vertical") + baseEmissionRate;
+    }
+    for (var l : Light in rocketLights) {
+    	var bValue =  Mathf.Clamp01(Input.GetAxis("Vertical"));
+    	l.intensity = lightIntensity * bValue;
+    	var lf = l.GetComponent(LensFlare);
+    	if (lf) {
+    		lf.brightness = bValue;
+    	}
     }
 }
 
