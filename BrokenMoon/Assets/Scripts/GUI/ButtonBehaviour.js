@@ -28,6 +28,7 @@ function Update() {
 		lightChanger.changeColor();
 		mainCam.animation.Play();
 		buttonState = ButtonState.None;
+		//audio.Play();
 	}
 	}
 	switch (buttonState) {
@@ -62,6 +63,7 @@ function OnMouseDown() {
 
 function OnMouseUpAsButton() {
 	if (!alreadyPressed) {
+		//audio.Play();
 		alreadyPressed = true;
 		lightChanger.changeColor();
 		mainCam.animation.Play();

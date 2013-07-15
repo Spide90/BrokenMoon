@@ -4,10 +4,11 @@ var speed : float = 50;
 //turn speed
 var turnRate : float = 5;
 
-var rocketParticleSystems : ParticleSystem[];
+var rocketParticleSystemsForward : ParticleSystem[];
+var rocketParticleSystemsBackward : ParticleSystem[];
 var rocketLights : Light[];
 var emissionRate : float = 300;
-var baseEmissionRate : float = 5;
+var baseEmissionRate : float = 0;
 var lightIntensity : float = 1;
 
 var cursor : Texture2D;
@@ -63,11 +64,13 @@ function Update () {
 			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnRate * Time.deltaTime);
 		}
     }
-    
     // particleSystem Control
-    for (var ps : ParticleSystem in rocketParticleSystems) {
-    	ps.emissionRate = emissionRate * Input.GetAxis("Vertical") + baseEmissionRate;
-    }
+    for (var ps : ParticleSystem in rocketParticleSystemsForward) {
+		ps.emissionRate = emissionRate * Mathf.Clamp01(Input.GetAxis("Vertical")) + baseEmissionRate;
+	}
+	for (var ps : ParticleSystem in rocketParticleSystemsBackward) {
+		ps.emissionRate = emissionRate * Mathf.Clamp01( -1 * Input.GetAxis("Vertical")) + baseEmissionRate;
+	}
     for (var l : Light in rocketLights) {
     	var bValue =  Mathf.Clamp01(Input.GetAxis("Vertical"));
     	l.intensity = lightIntensity * bValue;

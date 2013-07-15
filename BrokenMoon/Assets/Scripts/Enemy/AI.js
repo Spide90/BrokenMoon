@@ -15,10 +15,17 @@ private var player : PlayerControl;
 var targetLock : Texture2D;
 private var cameraControl : CameraControl;
 
+private var audioFly : AudioSource;
+private var audioShoot : AudioSource;
+
 function Start () {
 	cameraControl = Camera.main.GetComponent(CameraControl);
 	player = FindObjectOfType(PlayerControl);
 	yAxis = transform.position.y;
+	
+	var sources = GetComponents(AudioSource);
+	audioFly = sources[0];
+	audioShoot	= sources[1];
 }
 
 function aiIdle() {
@@ -34,6 +41,9 @@ function aiAware() {
 	var randomTurn : float = Random.Range(-20, 20);
 
 	rigidbody.AddRelativeForce(Vector3.forward * speed);
+	if (!audioFly.isPlaying) {
+		audioFly.Play();
+	}
 }
 
 function aiAttacking() {
@@ -47,6 +57,7 @@ function aiAttacking() {
 function shoot() {
 	var cannon = gameObject.GetComponentInChildren(AIShoot);
 	cannon.shoot();
+	audioShoot.Play();
 }
 
 function isChasing() : boolean {

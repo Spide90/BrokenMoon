@@ -27,8 +27,8 @@ function OnGUI(){
 		windowPosition = Vector2(Screen.width / 4, Screen.height / 4);
 		windowSize = Vector2(Screen.width / 2, Screen.height / 2);
 		itemIconSize = Vector2(Screen.width / 15, Screen.height / 15);
-		var currentX = windowPosition.x + 10;
-		var currentY = windowPosition.y + 10;
+		var currentX = windowPosition.x + Screen.width / 14;
+		var currentY = windowPosition.y + Screen.height / 14;
 		//draw inventory background
 		GUI.DrawTexture(Rect(windowPosition.x, windowPosition.y, windowSize.x, windowSize.y), inventoryTexture, ScaleMode.StretchToFill);
 		//display all items on background
@@ -40,7 +40,7 @@ function OnGUI(){
 				lastUpdate = 0.0;
 			}
 			currentX += itemIconSize.x + 10;
-			if(currentX + itemIconSize.x + 10 > windowPosition.x + windowSize.x){ //next row
+			if(currentX + itemIconSize.x + 10 > windowPosition.x * Screen.width * 13 / 14 + windowSize.x){ //next row
 				currentX = windowPosition.x + 10;
 				currentY += itemIconSize.y + 10;
 				if(currentY + itemIconSize.y > windowPosition.y + windowSize.y){
