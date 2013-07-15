@@ -6,7 +6,8 @@ var turnRate : float = 5;
 
 var rocketParticleSystemsForward : ParticleSystem[];
 var rocketParticleSystemsBackward : ParticleSystem[];
-var rocketLights : Light[];
+var rocketLightsForward : Light[];
+var rocketLightsBackward : Light[];
 var emissionRate : float = 300;
 var baseEmissionRate : float = 0;
 var lightIntensity : float = 1;
@@ -69,12 +70,20 @@ function Update () {
 		ps.emissionRate = emissionRate * Mathf.Clamp01(Input.GetAxis("Vertical")) + baseEmissionRate;
 	}
 	for (var ps : ParticleSystem in rocketParticleSystemsBackward) {
-		ps.emissionRate = emissionRate * Mathf.Clamp01( -1 * Input.GetAxis("Vertical")) + baseEmissionRate;
+		ps.emissionRate = emissionRate * Mathf.Clamp01(-Input.GetAxis("Vertical")) + baseEmissionRate;
 	}
-    for (var l : Light in rocketLights) {
-    	var bValue =  Mathf.Clamp01(Input.GetAxis("Vertical"));
+    for (var l : Light in rocketLightsForward) {
+    	var bValue =  Mathf.Clamp01(-Input.GetAxis("Vertical"));
     	l.intensity = lightIntensity * bValue;
     	var lf = l.GetComponent(LensFlare);
+    	if (lf) {
+    		lf.brightness = bValue;
+    	}
+    }
+    for (var l : Light in rocketLightsBackward) {
+    	bValue =  Mathf.Clamp01(Input.GetAxis("Vertical"));
+    	l.intensity = lightIntensity * bValue;
+    	lf = l.GetComponent(LensFlare);
     	if (lf) {
     		lf.brightness = bValue;
     	}

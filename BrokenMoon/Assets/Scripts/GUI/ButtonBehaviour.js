@@ -13,7 +13,7 @@ var buttonState : ButtonState = ButtonState.None;
 private var alreadyPressed = false;
 var mainCam : GameObject;
 var newLevel : String;
-
+var useGamepad : boolean = false;
 
 var lightChanger : ChangeLightColor;
 
@@ -72,6 +72,6 @@ function OnMouseUpAsButton() {
 }
 
 function ChangeLevel() {
-	PlayerPrefs.SetInt("GamePad", 1);
+	PlayerPrefs.SetInt("GamePad", useGamepad?1:0);
 	Application.LoadLevel(newLevel);
 }
